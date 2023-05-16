@@ -23,6 +23,7 @@
 // // Output: Updates the student with name 'Alice' to have age 20, new grades, and updated hobbies array
 
 
+//Students information database
 const students = [
     {name:"Amit", age:"28", grades: [70,65,80], hobbies: ["videogame" ,"Surfing Internaet"] },
     {name:"Sumit", age:"26", grades: [90,95,92], hobbies: ["reading", "travelling"] },
@@ -44,3 +45,19 @@ console.log(result);
 }
 
 findTopStudents(students, 85); // Need to call
+
+
+//2.b Adds 'painting' to the hobbies array of the student with name 'Alice'
+
+function addHobby(students, studentname, hobbiesitem )
+{
+//using Map to iterate Students array and checking student name matched of not
+//if its getting match pushing give hobbies item in particular stundent hobbies list.  
+   return students.map((student)=>{ if(student.name == studentname) {
+        student.hobbies.push(hobbiesitem);
+    }
+    return student});
+
+}
+console.log(addHobby(students, 'Alice', 'painting')); //Need to call
+
