@@ -38,3 +38,5 @@ addHobby(students, 'Alice', 'painting');
 updateStudent(students, 'Alice', { age: 20, grades: [90, 80, 95], hobbies: ['reading', 'painting'] });
 // Output: Updates the student with name 'Alice' to have age 20, new grades, and updated hobbies array
 ```
+
+const

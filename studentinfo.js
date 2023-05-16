@@ -24,22 +24,23 @@
 
 
 const students = [
-    {name:"Amit", age:"28", grades:"70", hobbies: "reading" },
-    {name:"Sumit", age:"26", grades:"85", hobbies: "reading" },
-    {name:"Sanjay", age:"220", grades:"90", hobbies: "reading" }
+    {name:"Amit", age:"28", grades: [70,65,80], hobbies: ["videogame" ,"Surfing Internaet"] },
+    {name:"Sumit", age:"26", grades: [90,95,92], hobbies: ["reading", "travelling"] },
+    {name:"Alice", age:"220", grades:[85,85,88], hobbies: ["music", "travelling"] }
 ]
 
-function findTopStudents(arr,threshold )
+// 2.a Returns an array of students with an average grade greater than 85
+
+function findTopStudents(students,threshold )
 {
-    let result=[];
-for(let student of arr)
-{
-    if(student.grades>85)
-    {
-result.push(student);
-    }
-}
+//Filtering data 
+let result = students.filter((student) =>{
+    //calculating average grade of each student
+    const average = student.grades.reduce((sum, grade)=> sum= sum +grade, 0)/student.grades.length; 
+    //checking condition to return
+    return average> threshold;
+} );
 console.log(result);
 }
 
-findTopStudents(students, 85);
+findTopStudents(students, 85); // Need to call
