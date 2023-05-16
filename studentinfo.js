@@ -52,9 +52,10 @@ findTopStudents(students, 85); // Need to call
 function addHobby(students, studentname, hobbiesitem )
 {
 //using Map to iterate Students array and checking student name matched of not
-//if its getting match pushing give hobbies item in particular stundent hobbies list.  
+
    return students.map((student)=>{ if(student.name == studentname) {
-        student.hobbies.push(hobbiesitem);
+//if its getting match pushing give hobbies item in particular stundent hobbies list.  
+    student.hobbies.push(hobbiesitem);
     }
     return student});
 
@@ -65,7 +66,9 @@ function addHobby(students, studentname, hobbiesitem )
 function updateStudent(students, studentname, {age,grades,hobbies})
 {
 return students.map((student)=>{
+    //iterating each student infomation and searching for particular student
     if(student.name===studentname){
+        //updating stundent informatin if condition get satisfied
 student.age=age;
 student.grades=grades;
 student.hobbies=hobbies;
