@@ -27,7 +27,7 @@
 const students = [
     {name:"Amit", age:"28", grades: [70,65,80], hobbies: ["videogame" ,"Surfing Internaet"] },
     {name:"Sumit", age:"26", grades: [90,95,92], hobbies: ["reading", "travelling"] },
-    {name:"Alice", age:"220", grades:[85,85,88], hobbies: ["music", "travelling"] }
+    {name:"Alice", age:"25", grades:[85,85,88], hobbies: ["music", "travelling"] }
 ]
 
 // 2.a Returns an array of students with an average grade greater than 85
@@ -59,5 +59,21 @@ function addHobby(students, studentname, hobbiesitem )
     return student});
 
 }
-console.log(addHobby(students, 'Alice', 'painting')); //Need to call
+// console.log(addHobby(students, 'Alice', 'painting')); //Need to call
+
+//2.c Updates the student with name 'Alice' to have age 20, new grades, and updated hobbies array
+function updateStudent(students, studentname, {age,grades,hobbies})
+{
+return students.map((student)=>{
+    if(student.name===studentname){
+student.age=age;
+student.grades=grades;
+student.hobbies=hobbies;
+    }
+    return student;
+})
+
+}
+console.log(updateStudent(students, 'Alice', { age: 20, grades: [90, 80, 95], hobbies: ['reading', 'painting'] }));
+
 
